@@ -5,12 +5,14 @@
     </div>
     <ul class="main-navigation">
       <li>About Me</li>
+      <li>Skills</li>
       <li>Experience</li>
       <li>Projects</li>
       <li>Contact</li>
     </ul>
   </nav>
 </template>
+
 
 <style lang="scss" scoped>
 nav {
@@ -23,7 +25,7 @@ nav {
     gap: 20px;
 
     li {
-      color: var(--grey);
+      // color: var(--grey);
       list-style: none;
     }
   }

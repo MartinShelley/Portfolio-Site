@@ -8,7 +8,7 @@
 <style lang="scss" scoped>
 h1 {
   display: grid;
-  color: var(--grey);
+  // color: var(--grey);
   font-size: 50px;
   text-align: center;
 }
