@@ -9,7 +9,7 @@
           family computer. From there, my passion for technology grew from
           taking apart many laptops in my teens to building a simple website so
           that my school friends could play games at the start of school (if any
-          of my old school teachers read this.. Im sorry!).
+          of my old school teachers read this.. I'm sorry!).
         </p>
         <p>
           Following University and the early years of my career, I've rekindled
@@ -18,23 +18,40 @@
           such as Carphone Warehouse, RBI (RELX group - previous owners of New
           Scientist Magazine & Farmers Weekly) & The White Company.
         </p>
-        <p>Now, I'm looking for my next challenge as a Front-End Developer.</p>
+        <p>
+          Now, I'm looking for my next challenge as a Front-End Developer where
+          I can continue to learn and grow.
+        </p>
       </div>
-      <img src="../assets/profile-picture.jpeg" />
+      <!-- <img src="../assets/profile-picture.jpeg" /> -->
+      <img src="../assets/DSC01128.jpg" />
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-.about-me-body {
-  display: flex;
-}
+#about-me {
+  // padding: 75px 0;
+  h2 {
+    text-align: center;
+  }
+  .about-me-body {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    .copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 50%;
 
-.copy {
-  width: 50%;
-}
-
-img {
-  max-width: 300px;
+      p {
+        margin: 0;
+      }
+    }
+    img {
+      max-width: 300px;
+    }
+  }
 }
 </style>

@@ -2,12 +2,16 @@
   <header>
     <MainNavigation />
   </header>
-  <MainHero />
-  <AboutMe />
-  <MySkills />
-  <MyExperience />
-  <MyProjects />
-  <ContactMe />
+  <main>
+    <MainHero />
+    <AboutMe />
+    <MySkills />
+    <MyExperience />
+    <MyProjects />
+  </main>
+  <footer>
+    <ContactMe />
+  </footer>
 </template>
 
 <script>
@@ -35,17 +39,48 @@ export default {
 
 <style lang="scss">
 :root {
-  --primary-color: #374151;
-  --grey: #dedede;
+  --white: #fffbfb;
+  --black: #000;
+  --orange: #e77917;
 }
 html {
-  // background-color: var(--primary-color);
-  //font-family: "Balsamiq Sans", "Manrope";
-  // color: var(--grey);
+  font-family: "Nunito Sans", "Manrope", sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
 }
 
 body {
   margin: 0;
-  padding: 40px 20px;
+}
+
+main {
+  padding: 40px 100px;
+}
+
+h1 {
+  font-size: 65px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+button {
+  background-color: var(--orange);
+  opacity: 0.8;
+  padding: 15px;
+  font-weight: 600;
+  width: 125px;
 }
 </style>

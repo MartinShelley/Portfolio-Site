@@ -1,11 +1,13 @@
 <template>
   <section id="my-experience">
-    <h3>My Experience</h3>
+    <h2>My Experience</h2>
     <div>
       <ul>
         <li>
-          Front End Developer @ The White Company
-          <span>November 2021 - Present</span>
+          <div>
+            Front End Developer @ The White Company
+            <span>November 2021 - Present</span>
+          </div>
           <ul>
             <li>
               Lead Developer for the Personalisation of The White Company
@@ -22,9 +24,11 @@
           </ul>
         </li>
         <li>
-          Digital Data Analyst (Implementation Specialist) @ Spotlight Sports
-          Group
-          <span>December 2018 - October 2021</span>
+          <div>
+            Digital Data Analyst (Implementation Specialist) @ Spotlight Sports
+            Group
+            <span>December 2018 - October 2021</span>
+          </div>
           <ul>
             <li>
               Using Vanilla JS & JQuery to enhance the website's analytics
@@ -34,8 +38,10 @@
           </ul>
         </li>
         <li>
-          Data Engineer @ Lynchpin Analytics
-          <span>May 2016 - October 2018</span>
+          <div>
+            Data Engineer @ Lynchpin Analytics
+            <span>May 2016 - October 2018</span>
+          </div>
           <ul>
             <li>
               Led on the implementation of several personalisation projects for
@@ -49,8 +55,10 @@
           </ul>
         </li>
         <li>
-          Sales & Application Specialist @ Realtime D.C
-          <span>August 2014 - May 2016 </span>
+          <div>
+            Sales & Application Specialist @ Realtime D.C
+            <span>August 2014 - May 2016 </span>
+          </div>
           <ul>
             <li>
               Maintaining the UK website & help to develop the US website using

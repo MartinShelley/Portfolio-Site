@@ -1,8 +1,8 @@
 <template>
   <section id="my-projects">
-    <h3>My Projects</h3>
-    <div>
-      <h4>Project 1</h4>
+    <h2>My Projects</h2>
+    <h4>Project 1</h4>
+    <div class="project">
       <p>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -14,8 +14,8 @@
       </p>
       <img src="https://via.placeholder.com/400" />
     </div>
-    <div>
-      <h4>Project 2</h4>
+    <h4>Project 2</h4>
+    <div class="project">
       <img src="https://via.placeholder.com/400" />
       <p>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -27,8 +27,8 @@
         mollit anim id est laborum.
       </p>
     </div>
-    <div>
-      <h4>Project 3</h4>
+    <h4>Project 3</h4>
+    <div class="project">
       <p>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -42,3 +42,10 @@
     </div>
   </section>
 </template>
+
+
+<style lang="scss" scoped>
+.project {
+  display: flex;
+}
+</style>
