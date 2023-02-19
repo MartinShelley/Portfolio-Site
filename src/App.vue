@@ -15,13 +15,13 @@
 </template>
 
 <script>
-import MainNavigation from "./components/MainNavigation.vue";
-import MainHero from "./components/MainHero.vue";
-import AboutMe from "./components/AboutMe.vue";
-import MySkills from "./components/MySkills.vue";
-import MyExperience from "./components/MyExperience.vue";
-import MyProjects from "./components/MyProjects.vue";
-import ContactMe from "./components/ContactMe.vue";
+import MainNavigation from "./components/Navigation/MainNavigation.vue";
+import MainHero from "./components/MainHero/MainHero.vue";
+import AboutMe from "./components/AboutMe/AboutMe.vue";
+import MySkills from "./components/MySkills/MySkills.vue";
+import MyExperience from "./components/Experience/MyExperience.vue";
+import MyProjects from "./components/Experience/MyProjects.vue";
+import ContactMe from "./components/Footer/ContactMe.vue";
 
 export default {
   name: "App",
@@ -33,6 +33,16 @@ export default {
     MyExperience,
     MyProjects,
     ContactMe,
+  },
+  mounted() {
+    window.onscroll = function () {
+      if (this.oldScroll > this.scrollY) {
+        document.querySelector("header").style.transform = "translateY(0%)";
+      } else {
+        document.querySelector("header").style.transform = "translateY(-100%)";
+      }
+      this.oldScroll = this.scrollY;
+    };
   },
 };
 </script>
@@ -54,6 +64,9 @@ header {
   width: 100%;
   z-index: 1;
   background-color: white;
+  box-shadow: 0px 0px 35px 1px rgb(0 0 0 / 10%);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform: translateY(0%);
 }
 
 body {

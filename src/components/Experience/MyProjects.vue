@@ -45,6 +45,9 @@
 
 
 <style lang="scss" scoped>
+h2 {
+  text-align: center;
+}
 .project {
   display: flex;
 }

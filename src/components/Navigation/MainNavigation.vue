@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="logo">
-      <img src="../assets/ms-low-res.png" />
+      <img src="../../assets/ms-low-res.png" />
       <!-- <img src="https://via.placeholder.com/40" /> -->
     </div>
     <ul class="main-navigation">

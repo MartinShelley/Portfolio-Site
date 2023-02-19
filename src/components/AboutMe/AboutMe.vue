@@ -24,7 +24,7 @@
         </p>
       </div>
       <!-- <img src="../assets/profile-picture.jpeg" /> -->
-      <img src="../assets/DSC01128.jpg" />
+      <img src="../../assets/DSC01128.jpg" />
     </div>
   </section>
 </template>
