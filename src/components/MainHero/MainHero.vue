@@ -13,12 +13,9 @@
 section {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100vh;
-  // text-align: center;
 }
 h1 {
-  // display: grid;
   margin: 0;
 }
 

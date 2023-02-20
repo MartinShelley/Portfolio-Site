@@ -1,35 +1,26 @@
 <template>
   <section id="contact-me">
     <h2>Get in touch!</h2>
+    <p>
+      Feel free to send over any questions you may have. I look forward to
+      hearing from you!
+    </p>
     <form>
-      <div class="form-section">
-        <label for="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Enter your name"
-          required
-        />
+      <div class="form-section" form-question="name">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" required />
       </div>
-      <div class="form-section">
+      <div class="form-section" form-question="email">
         <label for="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Enter your email address"
-          required
-        />
+        <input type="email" name="email" id="email" required />
       </div>
-      <div class="form-section message">
+      <div class="form-section" form-question="subject">
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" id="subject" required />
+      </div>
+      <div class="form-section" form-question="message">
         <label for="message">Message</label>
-        <textarea
-          name="message"
-          rows="5"
-          id="message"
-          placeholder="Enter your message"
-        ></textarea>
+        <textarea name="message" rows="5" id="message"></textarea>
       </div>
       <button type="submit">Submit</button>
     </form>
@@ -41,11 +32,17 @@
 section {
   background-color: #f4f4f4;
   color: #1a1b1f;
-  padding: 20px 100px;
+  padding: 40px 200px 20px;
+
+  h2,
+  p {
+    text-align: center;
+  }
 
   form {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 75px;
     // grid-template-rows: 1fr 1fr 0.5fr;
     .form-section {
       display: flex;
@@ -59,7 +56,8 @@ section {
       }
     }
 
-    .message {
+    .form-section[form-question="subject"],
+    .form-section[form-question="message"] {
       grid-column: 1 / 3;
     }
   }

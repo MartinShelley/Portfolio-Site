@@ -20,7 +20,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 100px;
+  padding: 20px 200px;
 
   .logo {
     img {
@@ -32,9 +32,9 @@ nav {
   .main-navigation {
     display: flex;
     gap: 20px;
+    padding: 0;
 
     li {
-      // color: var(--grey);
       list-style: none;
     }
   }

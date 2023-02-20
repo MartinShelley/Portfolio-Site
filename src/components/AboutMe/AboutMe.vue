@@ -22,8 +22,8 @@
           Now, I'm looking for my next challenge as a Front-End Developer where
           I can continue to learn and grow.
         </p>
+        <button>Download my public CV</button>
       </div>
-      <!-- <img src="../assets/profile-picture.jpeg" /> -->
       <img src="../../assets/DSC01128.jpg" />
     </div>
   </section>
@@ -43,10 +43,14 @@
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      width: 50%;
+      width: 60%;
 
       p {
         margin: 0;
+      }
+
+      button {
+        width: 250px;
       }
     }
     img {

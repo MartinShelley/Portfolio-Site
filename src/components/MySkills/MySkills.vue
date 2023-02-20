@@ -40,7 +40,7 @@ export default {
         
 <style lang="scss" scoped>
 #my-skills {
-  padding: 150px 0;
+  padding: 150px 0 0;
   h2 {
     text-align: center;
   }
