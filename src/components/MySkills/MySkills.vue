@@ -15,20 +15,20 @@ export default {
       skills: [
         "html",
         "css",
-        "sass",
+        "scss",
         "javascript",
-        "JQuery",
-        "VueJS",
+        "jquery",
+        "angular",
+        "vue",
         "git",
-        "cypress",
-        "MySQL",
+        "github",
+        "database",
         "npm",
         "google-analytics",
         "firebase",
         "google-tag-manager",
         "jira",
-        "github",
-        "visual-studio-code",
+        "node-js"
       ],
     };
   },
@@ -37,17 +37,19 @@ export default {
   },
 };
 </script>
-        
+
 <style lang="scss" scoped>
 #my-skills {
   padding: 150px 0 0;
+
   h2 {
     text-align: center;
   }
+
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(4, 250px);
-    grid-template-rows: repeat(4, 125px);
+    grid-template-columns: repeat(7, 150px);
+    grid-template-rows: repeat(3, 125px);
     justify-items: center;
     justify-content: center;
   }

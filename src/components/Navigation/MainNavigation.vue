@@ -1,18 +1,27 @@
 <template>
   <nav>
     <div class="logo">
-      <img src="../../assets/ms-low-res.png" />
-      <!-- <img src="https://via.placeholder.com/40" /> -->
+      <img src="../../assets/portfolio-logos/logo-no-background.svg" />
     </div>
     <ul class="main-navigation">
-      <li>About Me</li>
-      <li>Skills</li>
-      <li>Experience</li>
-      <li>Projects</li>
-      <li>Contact</li>
+      <li><a href="#about-me">About Me</a></li>
+      <li><a href="#my-skills">Skills</a></li>
+      <li><a href="#my-experience">Experience</a></li>
+      <li><a href="#my-projects">Projects</a></li>
+      <li><a href="#contact-me">Contact</a></li>
     </ul>
+    <UserProfiles />
   </nav>
 </template>
+
+<script>
+import UserProfiles from "../Navigation/UserProfiles.vue";
+export default {
+  components: {
+    UserProfiles,
+  },
+};
+</script>
 
 
 <style lang="scss" scoped>
@@ -36,6 +45,15 @@ nav {
 
     li {
       list-style: none;
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      a:hover {
+        color: var(--orange);
+      }
     }
   }
 }

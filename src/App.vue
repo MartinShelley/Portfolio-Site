@@ -6,11 +6,12 @@
     <MainHero />
     <AboutMe />
     <MySkills />
-    <MyExperience />
+    <MyTimeline />
     <MyProjects />
   </main>
   <footer>
     <ContactMe />
+    <FooterCopyright />
   </footer>
 </template>
 
@@ -19,9 +20,11 @@ import MainNavigation from "./components/Navigation/MainNavigation.vue";
 import MainHero from "./components/MainHero/MainHero.vue";
 import AboutMe from "./components/AboutMe/AboutMe.vue";
 import MySkills from "./components/MySkills/MySkills.vue";
-import MyExperience from "./components/Experience/MyExperience.vue";
+// import MyExperience from "./components/Experience/MyExperience.vue";
+import MyTimeline from "./components/Experience/MyTimeline";
 import MyProjects from "./components/Experience/MyProjects.vue";
 import ContactMe from "./components/Footer/ContactMe.vue";
+import FooterCopyright from "./components/Footer/FooterCopyright.vue";
 
 export default {
   name: "App",
@@ -30,21 +33,35 @@ export default {
     MainHero,
     AboutMe,
     MySkills,
-    MyExperience,
+    MyTimeline,
     MyProjects,
     ContactMe,
+    FooterCopyright,
   },
-  mounted() {
-    window.onscroll = function () {
-      if (this.oldScroll > this.scrollY) {
-        document.querySelector("header").style.transform = "translateY(0%)";
-      } else {
-        document.querySelector("header").style.transform = "translateY(-100%)";
+  created() {
+    window.addEventListener('scroll', this.scrollHandler);
+  },
+  methods: {
+    scrollHandler() {
+      window.onscroll = function () {
+        if (this.scrollY === 0) {
+          document.querySelector('header').classList.remove('mid-page');
+        }
+        else if (this.oldScroll > this.scrollY) {
+          document.querySelector('header').classList.add('mid-page');
+          document.querySelector("header").style.transform = "translateY(0%)";
+        }
+        else {
+          document.querySelector("header").style.transform = "translateY(-100%)";
+        }
+        this.oldScroll = this.scrollY;
       }
-      this.oldScroll = this.scrollY;
-    };
-  },
-};
+    },
+    unmounted() {
+      window.removeEventListener('scroll', this.scrollHandler);
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -53,6 +70,7 @@ export default {
   --black: #000;
   --orange: #e77917;
 }
+
 html {
   font-family: "Nunito Sans", "Manrope", sans-serif;
 }
@@ -64,9 +82,12 @@ header {
   width: 100%;
   z-index: 1;
   background-color: white;
-  box-shadow: 0px 0px 35px 1px rgb(0 0 0 / 10%);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: translateY(0%);
+
+  &.mid-page {
+    box-shadow: 0px 0px 35px 1px rgb(0 0 0 / 10%);
+  }
 }
 
 body {
@@ -75,6 +96,12 @@ body {
 
 main {
   padding: 40px 200px;
+}
+
+footer {
+  background-color: #f4f4f4;
+  color: #1a1b1f;
+  padding: 40px 200px 20px;
 }
 
 h1 {
@@ -95,5 +122,12 @@ button {
   padding: 15px;
   font-weight: 600;
   width: 125px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--white);
+  }
 }
 </style>

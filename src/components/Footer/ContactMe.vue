@@ -30,10 +30,6 @@
 
 <style lang="scss" scoped>
 section {
-  background-color: #f4f4f4;
-  color: #1a1b1f;
-  padding: 40px 200px 20px;
-
   h2,
   p {
     text-align: center;

@@ -31,19 +31,23 @@
 
 <style lang="scss" scoped>
 #about-me {
+  margin: 150px 0;
   // padding: 75px 0;
+
   h2 {
     text-align: center;
   }
+
   .about-me-body {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 50px;
+
     .copy {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      width: 60%;
+      width: 70%;
 
       p {
         margin: 0;
@@ -53,6 +57,7 @@
         width: 250px;
       }
     }
+
     img {
       max-width: 300px;
     }

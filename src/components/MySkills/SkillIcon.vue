@@ -1,12 +1,7 @@
-
 <template>
   <figure>
-    <img
-      class="skill-icon"
-      :src="require(`../../assets/skill-icons/${skill}-icon.svg`)"
-      @mouseenter="toggleCaption"
-      @mouseleave="toggleCaption"
-    />
+    <img class="skill-icon" :src="require(`../../assets/skill-icons/${skill}-icon.svg`)" @mouseenter="toggleCaption"
+      @mouseleave="toggleCaption" />
     <figcaption :skill="skill" v-show="hover">{{ formatCaption }}</figcaption>
   </figure>
 </template>
@@ -59,6 +54,7 @@ figure {
 
 figcaption[skill="html"],
 figcaption[skill="css"],
+figcaption[skill="scss"],
 figcaption[skill="sass"],
 figcaption[skill="npm"] {
   text-transform: uppercase;
