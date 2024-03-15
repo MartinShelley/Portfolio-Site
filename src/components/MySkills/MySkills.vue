@@ -3,7 +3,7 @@
     <h2>Skills</h2>
     <div class="carousel">
       <div class="carousel-inner-wrapper">
-        <SkillIcon :skill="item" v-for="item in skills" :key="item" />
+        <SkillIcon :skill="item" v-for="item in skills" :key="item" @pauseAnimation="pauseCarousel($event)" />
       </div>
     </div>
   </section>
@@ -12,6 +12,9 @@
 <script>
 import SkillIcon from "./SkillIcon.vue";
 export default {
+  components: {
+    SkillIcon,
+  },
   data() {
     return {
       //included each skill twice to ensure carousel seems infinite
@@ -49,11 +52,14 @@ export default {
         "jira",
         "node-js"
       ],
+      carouselState: 'running'
     };
   },
-  components: {
-    SkillIcon,
-  },
+  methods: {
+    pauseCarousel(data) {
+      return data ? this.carouselState = 'paused' : this.carouselState = 'running';
+    }
+  }
 };
 </script>
 
@@ -69,28 +75,27 @@ export default {
     margin: 0 auto;
     overflow: hidden;
 
+    &:before,
+    &:after {
+      content: "";
+      height: 100px;
+      position: absolute;
+      width: 20px;
+      z-index: 2;
+    }
+
     &:before {
       background: linear-gradient(to right,
           rgba(255, 255, 255, 1) 0%,
           rgba(255, 255, 255, 0) 100%);
-      content: "";
-      height: 100px;
-      position: absolute;
-      width: 100px;
-      z-index: 2;
     }
 
     &:after {
       background: linear-gradient(to right,
           rgba(255, 255, 255, 0) 0%,
           rgba(255, 255, 255, 1) 100%);
-      content: "";
-      height: 100px;
-      position: absolute;
       top: 0;
       right: 0;
-      width: 100px;
-      z-index: 2;
     }
 
     .carousel-inner-wrapper {
@@ -98,6 +103,8 @@ export default {
       display: flex;
       justify-content: flex-start;
       gap: 20px;
+      padding: 0 50px;
+      animation-play-state: v-bind(carouselState);
     }
   }
 }

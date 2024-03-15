@@ -94,7 +94,7 @@ export default {
 
 <style lang="scss" scoped>
 section {
-  padding: 100px 0;
+  // padding: 100px 0;
 
   h2 {
     text-align: center;
@@ -113,10 +113,12 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     h4,
     h5 {
       margin: 0;
     }
+
     .date-range {
       font-size: 12px;
     }
@@ -132,6 +134,7 @@ section {
     .role-description {
       display: none;
     }
+
     .selected-job-role {
       display: flex;
       flex-direction: column;

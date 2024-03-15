@@ -6,8 +6,10 @@
       </div>
     </div>
     <div class=" jobs">
-      <div v-for="( value, key ) in roles" :key=key class="job-wrapper" :style="`left: ${(key * 20) + 10}%`">
-        <h5 class="job-title">{{ value.jobTitle }} @ {{ value.company }}</h5>
+      <div v-for="( value, key ) in roles" :key=key class="job-wrapper" :job-role="value.company"
+        :style="`left: ${(key * 20) + 10}%`">
+        <h5 class="job-title">{{ value.jobTitle }} @</h5>
+        <h5 class="job-title">{{ value.company }}</h5>
         <p class="job-duration">{{ value.duration }}</p>
         <!-- <p class="job-description" v-if="value.description">{{ value.description }}</p> -->
         <!-- <li v-for="( duty, index ) in value.duties" :key="index">{{ duty }}</li> -->
@@ -40,7 +42,7 @@ export default {
         },
         {
           company: 'Racing Post',
-          jobTitle: 'Digital Data Analyst (Implementation Specialist)',
+          jobTitle: 'Implementation Specialist',
           duration: 'Dec 2018 - Oct 2021',
           skills: ['HTML', 'CSS', 'Javascript']
           // duties: ['Using Vanilla JS to add analytics tracking and embed 3rd party applications to Racing Post site', 'Spearheaded the integration of various third-party tools', 'Diagnosed issues and developed technical solutions (using Vanilla Javascript) for third-party tool integrations'],
@@ -72,9 +74,8 @@ export default {
 #my-career-timeline {
   position: relative;
   width: 100%;
-  height: 500px;
-  margin: 150px auto;
-
+  height: 750px;
+  margin: 75px auto;
 
   h2 {
     text-align: center;
@@ -86,11 +87,40 @@ export default {
     height: 3px;
     top: 50%;
     background-color: #000;
+    border-radius: 5px;
 
     .years {
       position: absolute;
-      padding-top: 20px;
       transform: translateX(-50%);
+      top: -15px;
+      border: 1px solid black;
+      border-radius: 100%;
+      padding: 5px;
+      background-color: #f4f4f4;
+
+      &:nth-child(odd) {
+        &::before {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: 100%;
+          height: 125px;
+          width: 1px;
+          border-left: 1px solid #000;
+        }
+      }
+
+      &:nth-child(even) {
+        &:after {
+          content: '';
+          position: absolute;
+          height: 125px;
+          width: 1px;
+          border-left: 1px solid #000;
+          left: 50%;
+          top: 100%;
+        }
+      }
     }
   }
 
@@ -103,44 +133,49 @@ export default {
       position: absolute;
       transform: translateX(-50%);
       text-align: center;
-      width: 450px;
+      width: 375px;
+      height: 125px;
+      padding: 5px;
+      border: 1px solid black;
+      border-radius: 10px;
+      background-color: var(--orange);
 
-      // h5 {
-      //   width: 300px;
-      // }
-
-      &:nth-child(odd) {
-        top: 20%;
-
-        &::after {
-          content: '';
-          position: absolute;
-          top: 100%;
-          height: 15px;
-          width: 1px;
-          border-left: 1px solid #000;
-        }
+      .job-title {
+        font-size: 16px;
+        margin: 0;
       }
 
-      &:nth-child(even) {
-        bottom: 20%;
+      .job-duration {
+        margin: 8px 0;
+      }
 
-        &::before {
-          content: '';
-          position: absolute;
-          height: 15px;
-          width: 1px;
-          border-left: 1px solid #000;
-        }
+      .job-duration,
+      .skills {
+        font-size: 14px;
       }
 
       .skills {
         display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 10px;
 
         li {
           list-style-type: none;
         }
       }
+
+      &:nth-child(odd) {
+        top: 15%;
+      }
+
+      &:nth-child(even) {
+        bottom: 15%;
+      }
+    }
+
+    .job-wrapper[job-role="Realtime DC"] {
+      visibility: visible !important;
     }
   }
 }

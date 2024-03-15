@@ -19,6 +19,12 @@ export default {
   methods: {
     toggleCaption() {
       this.hover = !this.hover;
+      if (this.hover) {
+        this.$emit('pauseAnimation', true);
+      }
+      else {
+        this.$emit('pauseAnimation', false);
+      }
     },
   },
   computed: {
@@ -41,7 +47,7 @@ figure {
   padding: 20px 0;
 
   .skill-icon {
-    height: 75px;
+    height: 60px;
     width: 75px;
   }
 
@@ -52,6 +58,9 @@ figure {
   figcaption {
     margin-top: 10px;
     text-transform: capitalize;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
   }
 }
 

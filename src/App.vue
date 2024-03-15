@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss">
 :root {
-  --white: #fffbfb;
+  --white: #f4f4f4;
   --black: #000;
   --orange: #e77917;
 }
@@ -99,7 +99,7 @@ main {
 }
 
 footer {
-  background-color: #f4f4f4;
+  background-color: var(--white);
   color: #1a1b1f;
   padding: 40px 200px 20px;
 }
