@@ -1,8 +1,10 @@
 <template>
   <section id="my-skills">
     <h2>Skills</h2>
-    <div class="skills-grid">
-      <SkillIcon :skill="item" v-for="item in skills" :key="item" />
+    <div class="carousel">
+      <div class="carousel-inner-wrapper">
+        <SkillIcon :skill="item" v-for="item in skills" :key="item" />
+      </div>
     </div>
   </section>
 </template>
@@ -12,7 +14,24 @@ import SkillIcon from "./SkillIcon.vue";
 export default {
   data() {
     return {
+      //included each skill twice to ensure carousel seems infinite
       skills: [
+        "html",
+        "css",
+        "scss",
+        "javascript",
+        "jquery",
+        "angular",
+        "vue",
+        "git",
+        "github",
+        "database",
+        "npm",
+        "google-analytics",
+        "firebase",
+        "google-tag-manager",
+        "jira",
+        "node-js",
         "html",
         "css",
         "scss",
@@ -40,18 +59,56 @@ export default {
 
 <style lang="scss" scoped>
 #my-skills {
-  padding: 150px 0 0;
-
   h2 {
     text-align: center;
   }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 150px);
-    grid-template-rows: repeat(3, 125px);
-    justify-items: center;
-    justify-content: center;
+  .carousel {
+    max-width: 750px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+
+    &:before {
+      background: linear-gradient(to right,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 0) 100%);
+      content: "";
+      height: 100px;
+      position: absolute;
+      width: 100px;
+      z-index: 2;
+    }
+
+    &:after {
+      background: linear-gradient(to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 1) 100%);
+      content: "";
+      height: 100px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      z-index: 2;
+    }
+
+    .carousel-inner-wrapper {
+      animation: skills-carousel 45s linear infinite;
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+  }
+}
+
+@keyframes skills-carousel {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-95px * 16))
   }
 }
 </style>

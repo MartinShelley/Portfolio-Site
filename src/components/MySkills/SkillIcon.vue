@@ -1,8 +1,8 @@
 <template>
-  <figure>
+  <figure class="slide">
     <img class="skill-icon" :src="require(`../../assets/skill-icons/${skill}-icon.svg`)" @mouseenter="toggleCaption"
       @mouseleave="toggleCaption" />
-    <figcaption :skill="skill" v-show="hover">{{ formatCaption }}</figcaption>
+    <figcaption :skill="skill" :style="{ visibility: captionVisibility }">{{ formatCaption }}</figcaption>
   </figure>
 </template>
 
@@ -25,6 +25,9 @@ export default {
     formatCaption() {
       return this.skill.replaceAll("-", " ");
     },
+    captionVisibility() {
+      return this.hover ? 'visible' : 'hidden';
+    }
   },
 };
 </script>
@@ -35,18 +38,18 @@ figure {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px 0;
 
   .skill-icon {
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    width: 75px;
   }
 
   .skill-icon:hover {
-    scale: 1.2;
+    scale: 1.1;
   }
 
   figcaption {
-    // display: none;
     margin-top: 10px;
     text-transform: capitalize;
   }
