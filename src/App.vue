@@ -20,7 +20,6 @@ import MainNavigation from "./components/Navigation/MainNavigation.vue";
 import MainHero from "./components/MainHero/MainHero.vue";
 import AboutMe from "./components/AboutMe/AboutMe.vue";
 import MySkills from "./components/MySkills/MySkills.vue";
-// import MyExperience from "./components/Experience/MyExperience.vue";
 import MyTimeline from "./components/Experience/MyTimeline";
 import MyProjects from "./components/Experience/MyProjects.vue";
 import ContactMe from "./components/Footer/ContactMe.vue";
@@ -80,7 +79,7 @@ header {
   top: 0;
   height: 100px;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
   background-color: white;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: translateY(0%);
