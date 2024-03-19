@@ -7,9 +7,9 @@
         <h4 class="job-title">{{ value.jobTitle }} @ {{ value.company }}</h4>
         <p class="job-duration">{{ value.duration }}</p>
         <p class="job-description" v-if="value.description">{{ value.description }}</p>
-        <div class="skills">
+        <ul class="skills">
           <li v-for="( skill, index ) in value.skills" :key="index">{{ skill }}</li>
-        </div>
+        </ul>
       </div>
     </div>
   </section>
@@ -38,7 +38,8 @@ export default {
           company: 'Racing Post',
           jobTitle: 'Implementation Specialist',
           duration: 'Dec 2018 - Oct 2021',
-          skills: ['HTML', 'CSS', 'Javascript', 'jQuery', 'Google Analytics', 'Google Tag Manager', 'Segment'],
+          skills: ['HTML', 'CSS', 'Javascript', 'jQuery', 'Segment'],
+          // skills: ['HTML', 'CSS', 'Javascript', 'jQuery', 'Google Analytics', 'Google Tag Manager', 'Segment'],
           description: 'Using Vanilla Javascript to add analytics tracking and embed 3rd party applications to Racing Post site. Spearheaded the integration of various third-party tools through Racing Posts Customer Data Platform. Diagnosed issues and developed technical solutions (using Vanilla Javascript) for third-party tool integrations.'
         },
         {
@@ -90,10 +91,10 @@ export default {
 
         li {
           list-style: none;
-          padding: 5px;
-          background-color: var(--white);
-          border: 2px solid var(--black);
-          border-radius: 5px;
+          padding: 10px;
+          background-color: var(--orange);
+          color: var(--white);
+          border-radius: 10px;
         }
       }
 

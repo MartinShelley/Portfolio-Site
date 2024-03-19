@@ -89,12 +89,14 @@ header {
   }
 }
 
-body {
+body,
+ul {
   margin: 0;
+  padding: 0;
 }
 
 main {
-  padding: 40px 200px;
+  padding: 40px 200px 200px;
 }
 
 footer {
