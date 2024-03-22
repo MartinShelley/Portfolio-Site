@@ -95,6 +95,7 @@ export default {
           background-color: var(--orange);
           color: var(--white);
           border-radius: 10px;
+          font-weight: bold;
         }
       }
 
