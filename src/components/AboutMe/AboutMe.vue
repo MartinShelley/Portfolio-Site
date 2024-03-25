@@ -21,7 +21,7 @@
           with different technologies, mainly front end frameworks.
         </p>
         <p>
-          Now, at I-Neda, I'm continuing the learning journey as a Developer using Angular & Typescript while learning
+          Now, at I-Neda, I'm continuing my learning journey as a developer using Angular & Typescript while learning
           Node.js in my spare time. I'm eager to further my skills and tackle exciting new projects on the horizon.
         </p>
         <button>Download my public CV</button>
