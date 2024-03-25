@@ -88,6 +88,8 @@ export default {
       background: linear-gradient(to right,
           rgba(255, 255, 255, 1) 0%,
           rgba(255, 255, 255, 0) 100%);
+      top: 0;
+      left: 0;
     }
 
     &:after {

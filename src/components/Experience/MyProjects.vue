@@ -23,20 +23,6 @@
         <Pagination />
       </template>
     </Carousel>
-    <!-- <div class="project"> -->
-
-    <!-- </div> -->
-    <!-- <div class="project"> -->
-
-    <!-- </div> -->
-    <!-- <div class="project"> -->
-
-    <!-- </div> -->
-    <!-- <div class="featured-projects">
-      
-      
-      
-    </div> -->
   </section>
 </template>
 
@@ -90,34 +76,15 @@ h2 {
   text-align: center;
 }
 
-// .featured-projects {
-//   display: flex;
-//   gap: 12px;
-
 .project {
   display: flex;
   flex-direction: column;
   position: relative;
-  // background: url('../../assets/project-screenshots/audiophile-website.png') center center/cover;
-  // background-color: #cccccc;
-  /* Used if the image is unavailable */
-  // height: 500px;
-  // width: 500px;
-  // width: 800px;
-  /* You must set a specified height */
-  // background-position: center;
-  // /* Center the image */
-  // background-repeat: no-repeat;
-  // /* Do not repeat the image */
-  // background-size: cover;
-  /* Resize the background image to cover the entire container */
 
   img {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     max-width: 900px;
-    // height: 275px;
-    // width: 800px;
   }
 
   .hover-card {
@@ -168,5 +135,4 @@ h2 {
     }
   }
 }
-
-// }</style>
+</style>
