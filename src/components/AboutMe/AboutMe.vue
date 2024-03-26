@@ -24,7 +24,9 @@
           Now, at I-Neda, I'm continuing my learning journey as a developer using Angular & Typescript while learning
           Node.js in my spare time. I'm eager to further my skills and tackle exciting new projects on the horizon.
         </p>
-        <button>Download my public CV</button>
+        <a href="./cv.pdf" target="_blank">
+          <button class="button">Download my public CV</button>
+        </a>
       </div>
       <img src="../../assets/DSC01128.jpg" />
     </div>
@@ -64,5 +66,6 @@
       max-width: 300px;
     }
   }
+
 }
 </style>

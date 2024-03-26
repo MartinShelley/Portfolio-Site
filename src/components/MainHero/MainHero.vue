@@ -3,8 +3,8 @@
     <div>
       <h3>Bridging the gap between design & technology.</h3>
       <h1>Hey! I'm Martin.</h1>
-      <h2>I'm a Front-End Developer based in London.</h2>
-      <button>Contact Me</button>
+      <h2>I'm a Front-End Developer based in Hampshire.</h2>
+      <button class="button">Contact Me</button>
     </div>
     <div class="custom-shape-divider-bottom-1710255202">
       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

@@ -22,7 +22,7 @@
         <label for="message">Message</label>
         <textarea name="message" rows="5" id="message"></textarea>
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" class="button">Submit</button>
     </form>
   </section>
 </template>
@@ -30,6 +30,7 @@
 
 <style lang="scss" scoped>
 section {
+
   h2,
   p {
     text-align: center;
@@ -39,6 +40,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 75px;
+
     // grid-template-rows: 1fr 1fr 0.5fr;
     .form-section {
       display: flex;
@@ -58,6 +60,7 @@ section {
     }
   }
 }
+
 textarea {
   resize: vertical;
   height: 200px;

@@ -1,18 +1,24 @@
 <template>
-  <header>
-    <MainNavigation />
-  </header>
-  <main>
-    <MainHero />
-    <AboutMe />
-    <MySkills />
-    <MyTimeline />
-    <MyProjects />
-  </main>
-  <footer>
-    <ContactMe />
-    <FooterCopyright />
-  </footer>
+  <div>
+    <Vue3Lottie :animationData="animation" :height="400" :width="400" :loop="false" @onComplete="toggleIsLoading"
+      v-if="isLoading" />
+    <div v-else>
+      <header>
+        <MainNavigation />
+      </header>
+      <main>
+        <MainHero />
+        <AboutMe />
+        <MySkills />
+        <MyTimeline />
+        <MyProjects />
+      </main>
+      <footer>
+        <ContactMe />
+        <FooterCopyright />
+      </footer>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -25,6 +31,9 @@ import MyProjects from "./components/Experience/MyProjects.vue";
 import ContactMe from "./components/Footer/ContactMe.vue";
 import FooterCopyright from "./components/Footer/FooterCopyright.vue";
 
+import { Vue3Lottie } from 'vue3-lottie'
+import animation from "./assets/Animation.json";
+
 export default {
   name: "App",
   components: {
@@ -36,11 +45,21 @@ export default {
     MyProjects,
     ContactMe,
     FooterCopyright,
+    Vue3Lottie
   },
   created() {
     window.addEventListener('scroll', this.scrollHandler);
   },
+  data() {
+    return {
+      isLoading: true,
+      animation
+    }
+  },
   methods: {
+    toggleIsLoading() {
+      this.isLoading = !this.isLoading;
+    },
     scrollHandler() {
       window.onscroll = function () {
         if (this.scrollY === 0) {
@@ -117,7 +136,7 @@ h3 {
   font-size: 30px;
 }
 
-button {
+.button {
   background-color: var(--orange);
   opacity: 0.8;
   padding: 15px;

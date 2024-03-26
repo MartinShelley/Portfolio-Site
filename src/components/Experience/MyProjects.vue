@@ -1,7 +1,7 @@
 <template>
   <section id="my-projects">
     <h2>My Projects</h2>
-    <Carousel :items-to-show="1" autoplay="2500" wrap-around="true" transition="500" pause-autoplay-on-hover="true">
+    <Carousel :items-to-show="1" :autoplay=2500 :wrap-around=true :transition=500 :pause-autoplay-on-hover=true>
       <Slide v-for="(project, index) in projects" :key="index" class="project">
         <img :src="getImgUrl(project.name)" />
         <div class="hover-card">
@@ -10,10 +10,10 @@
             <p class="tools">{{ project.madeWith }}</p>
             <div class="buttons">
               <a :href="project.gitHubLink" target="_blank">
-                <button>View Code</button>
+                <button class="button">View Code</button>
               </a>
               <a :href="project.liveEnvLink" target="_blank">
-                <button>Live Demo</button>
+                <button class="button">Live Demo</button>
               </a>
             </div>
           </div>
@@ -134,5 +134,10 @@ h2 {
       opacity: 1;
     }
   }
+
+}
+
+ol.carousel__pagination {
+  padding-left: 0 !important;
 }
 </style>
