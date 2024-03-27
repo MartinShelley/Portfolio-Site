@@ -1,23 +1,21 @@
 <template>
-  <div>
-    <Vue3Lottie :animationData="animation" :height="400" :width="400" :loop="false" @onComplete="toggleIsLoading"
-      v-if="isLoading" />
-    <div v-else>
-      <header>
-        <MainNavigation />
-      </header>
-      <main>
-        <MainHero />
-        <AboutMe />
-        <MySkills />
-        <MyTimeline />
-        <MyProjects />
-      </main>
-      <footer>
-        <ContactMe />
-        <FooterCopyright />
-      </footer>
-    </div>
+  <Vue3Lottie :animationData="animation" :speed="0.75" :height="350" :width="350" :loop="false"
+    @onComplete="toggleIsLoading" v-if="isLoading" />
+  <div v-if="!isLoading" class="main-content">
+    <header>
+      <MainNavigation />
+    </header>
+    <main>
+      <MainHero />
+      <AboutMe />
+      <MySkills />
+      <MyTimeline />
+      <MyProjects />
+    </main>
+    <footer>
+      <ContactMe />
+      <FooterCopyright />
+    </footer>
   </div>
 </template>
 
@@ -59,6 +57,10 @@ export default {
   methods: {
     toggleIsLoading() {
       this.isLoading = !this.isLoading;
+      this.loadPage();
+    },
+    loadPage() {
+
     },
     scrollHandler() {
       window.onscroll = function () {
@@ -118,6 +120,12 @@ main {
   padding: 40px 200px 200px;
 }
 
+.main-content {
+  animation-name: fade-in;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+
 footer {
   background-color: var(--white);
   color: #1a1b1f;
@@ -150,4 +158,27 @@ h3 {
     background-color: var(--white);
   }
 }
-</style>
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+// .fade-enter-from {
+//   opacity: 0;
+// }
+
+// .fade-enter-active {
+//   transition: all 10s ease;
+//   transition-delay: 5s;
+// }
+
+// .fade-enter-to {
+//   opacity: 1;
+// }</style>
