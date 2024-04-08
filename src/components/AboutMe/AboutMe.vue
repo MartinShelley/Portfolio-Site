@@ -28,7 +28,7 @@
           <button class="button">Download my public CV</button>
         </a>
       </div>
-      <img src="../../assets/DSC01128.jpg" />
+      <img src="../../assets/me-300.jpg" />
     </div>
   </section>
 </template>
@@ -48,13 +48,14 @@
     gap: 50px;
 
     .copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
       width: 70%;
 
       p {
-        margin: 0;
+        margin: 0 0 15px;
+
+        &:last-of-type {
+          margin-bottom: 30px;
+        }
       }
 
       button {
@@ -63,9 +64,29 @@
     }
 
     img {
-      max-width: 300px;
+      height: 100%;
     }
   }
+}
 
+@media screen and (max-width: 1000px) {
+  #about-me {
+    .about-me-body {
+      flex-direction: column;
+
+      .copy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: unset;
+      }
+
+      img {
+        width: 300px;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
+  }
 }
 </style>

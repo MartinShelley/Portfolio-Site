@@ -1,10 +1,10 @@
 <template>
   <section id="my-projects">
     <h2>My Projects</h2>
-    <Carousel :items-to-show="1" :autoplay=2500 :wrap-around=true :transition=500 :pause-autoplay-on-hover=true>
+    <Carousel :items-to-show="1" :autoplay=3000 :wrap-around=true :transition=1000 :pause-autoplay-on-hover=true>
       <Slide v-for="(project, index) in projects" :key="index" class="project">
-        <img :src="getImgUrl(project.name)" />
-        <div class="hover-card">
+        <img :src="getImgUrl(project.name)" v-if="project.gitHubLink" />
+        <div class="hover-card" v-if="project.gitHubLink">
           <div class="card-content">
             <h4 class="project-title">{{ project.name }}</h4>
             <p class="tools">{{ project.madeWith }}</p>
@@ -17,6 +17,9 @@
               </a>
             </div>
           </div>
+        </div>
+        <div class="coming-soon" v-else>
+          <h3>More Coming Soon...</h3>
         </div>
       </Slide>
       <template #addons>
@@ -53,6 +56,9 @@ export default {
           madeWith: 'Vue',
           gitHubLink: 'https://github.com/MartinShelley/invoice-app',
           liveEnvLink: 'https://invoice-app-3517e.web.app/'
+        },
+        comingSoon: {
+
         }
       }
     }
@@ -84,7 +90,7 @@ h2 {
   img {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    max-width: 900px;
+    width: 100%;
   }
 
   .hover-card {
@@ -123,6 +129,18 @@ h2 {
         }
       }
     }
+  }
+
+  .coming-soon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #f4f4f4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
   }
 
   &:hover {

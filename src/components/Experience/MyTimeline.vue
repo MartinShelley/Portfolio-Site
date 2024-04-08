@@ -88,6 +88,7 @@ export default {
       .skills {
         display: flex;
         gap: 20px;
+        flex-wrap: wrap;
 
         li {
           list-style: none;

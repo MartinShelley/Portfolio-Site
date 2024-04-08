@@ -1,27 +1,54 @@
 <template>
-  <nav>
+  <!-- <div id="desktop-navigation" class="header-wrapper"> -->
+  <div class="header-wrapper">
     <div class="logo">
       <img src="../../assets/portfolio-logos/logo-no-background.svg" />
     </div>
-    <ul class="main-navigation">
-      <li><a href="#about-me">About Me</a></li>
-      <li><a href="#my-skills">Skills</a></li>
-      <li><a href="#my-experience">Experience</a></li>
-      <li><a href="#my-projects">Projects</a></li>
-      <li><a href="#contact-me">Contact</a></li>
-    </ul>
-    <div class="other-nav">
+    <nav id="desktop-nav" class="main-navigation">
+      <ul>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#my-skills">Skills</a></li>
+        <li><a href="#my-experience">Experience</a></li>
+        <li><a href="#my-projects">Projects</a></li>
+        <li><a href="#contact-me">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="desktop-secondary-nav" class="secondary-navigation">
       <UserProfiles />
       <div class="open-to-work work-status">
         <div class="light"></div>
         <p>Open to work</p>
       </div>
-      <!-- <div class="unavailable-for-work work-status">
-        <div class="light"></div>
-        <p>Unavailable for work</p>
-      </div> -->
     </div>
-  </nav>
+    <svg id="hamburger-icon" width="32px" height="32px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+      fill="none" @click="toggleHamburgerMenu()">
+      <path fill="#000000" fill-rule="evenodd"
+        d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z" />
+    </svg>
+  </div>
+  <div id="mobile-navigation">
+    <div id="mobile-nav-background" :class="showHamburgerMenu ? 'show' : 'hide'"></div>
+    <aside :class="showHamburgerMenu ? 'opened' : 'closed'">
+      <div class="nav-wrapper">
+        <nav class="main-navigation">
+          <ul>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#my-skills">Skills</a></li>
+            <li><a href="#my-experience">Experience</a></li>
+            <li><a href="#my-projects">Projects</a></li>
+            <li><a href="#contact-me">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="secondary-navigation">
+          <UserProfiles />
+          <div class="open-to-work work-status">
+            <div class="light"></div>
+            <p>Open to work</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
 </template>
 
 <script>
@@ -30,15 +57,34 @@ export default {
   components: {
     UserProfiles,
   },
+  // props: {
+  //   isMobile: Boolean
+  // },
+  data() {
+    return {
+      showHamburgerMenu: false
+    }
+  },
+  methods: {
+    toggleHamburgerMenu() {
+      this.showHamburgerMenu = !this.showHamburgerMenu;
+      if (this.showHamburgerMenu) {
+        document.body.style.overflow = 'hidden';
+      }
+      else {
+        document.body.style.overflow = 'unset';
+      }
+    }
+  }
 };
 </script>
 
 
 <style lang="scss" scoped>
-nav {
+.header-wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 20px 200px;
 
   .logo {
@@ -48,56 +94,181 @@ nav {
     }
   }
 
-  .main-navigation {
-    display: flex;
-    gap: 20px;
-    padding: 0;
-
-    li {
-      list-style: none;
-
-      a {
-        text-decoration: none;
-        color: #000;
-      }
-
-      a:hover {
-        color: var(--orange);
-      }
-    }
-  }
-
-  .other-nav {
+  .secondary-navigation {
     display: flex;
     align-items: center;
     gap: 20px;
+  }
+}
 
-    .work-status {
-      display: flex;
-      gap: 5px;
-      align-items: center;
+.main-navigation ul {
+  display: flex;
+  gap: 20px;
+  padding: 0;
 
-      .light {
-        width: 10px;
-        height: 10px;
-        border-radius: 100%;
-      }
+  li {
+    list-style: none;
 
+    a {
+      text-decoration: none;
+      color: #000;
     }
 
-    .open-to-work {
-      .light {
-        animation: open-to-work 1s ease infinite;
-      }
+    a:hover {
+      color: var(--orange);
+    }
+  }
+}
+
+.work-status {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+  .light {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+}
+
+.open-to-work {
+  .light {
+    animation: open-to-work 1s ease infinite;
+  }
+}
+
+.unavailable-for-work {
+  .light {
+    animation: unavailable-for-work 1s ease infinite;
+  }
+}
+
+#mobile-navigation {
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // right: 0;
+  // left: 0;
+  // height: 100dvh;
+  // width: 100vw;
+
+  #mobile-nav-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 1;
+    transition: all ease 1s;
+
+    &.show {
+      opacity: 1;
     }
 
-    .unavailable-for-work {
-      .light {
-        animation: unavailable-for-work 1s ease infinite;
-      }
+    &.hide {
+      opacity: 0;
     }
   }
 
+  aside {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100dvh;
+    width: 75vw;
+    z-index: 2;
+    background-color: #f4f4f4;
+    transition: all ease-out 1s;
+
+
+    &.opened {
+      transform: translateX(0);
+
+      // &::before {
+      //   background-color: rgba(0, 0, 0, 0.5);
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   width: 100vw;
+      //   height: 100vh;
+      //   z-index: 1;
+      //   transition: all ease 1s;
+      // }
+    }
+
+    &.closed {
+      transform: translateX(75vw);
+    }
+
+    .nav-wrapper {
+      // padding: 100px 50px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-evenly;
+      padding-left: 30px;
+
+      .main-navigation ul {
+        flex-direction: column;
+
+        li {
+          font-size: 32px;
+        }
+      }
+
+      .work-status {
+        .light {}
+
+        p {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  // #desktop-navigation {
+  //   display: flex;
+  // }
+
+  #hamburger-icon,
+  #mobile-navigation {
+    display: none
+  }
+}
+
+
+@media screen and (max-width: 1250px) {
+  // #desktop-navigation {
+  //   display: none;
+  // }
+
+  #desktop-nav,
+  #desktop-secondary-nav {
+    display: none;
+  }
+
+  #hamburger-icon {
+    display: block;
+    position: relative;
+    z-index: 1000;
+  }
+
+  #mobile-navigation {
+    display: block;
+  }
+
+  .header-wrapper {
+    padding: 20px 50px;
+  }
 }
 
 @keyframes open-to-work {

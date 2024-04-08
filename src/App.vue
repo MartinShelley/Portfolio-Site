@@ -3,6 +3,7 @@
     @onComplete="toggleIsLoading" v-if="isLoading" />
   <div v-if="!isLoading" class="main-content">
     <header>
+      <!-- <MainNavigation :isMobile="isMobile" /> -->
       <MainNavigation />
     </header>
     <main>
@@ -14,7 +15,7 @@
     </main>
     <footer>
       <ContactMe />
-      <FooterCopyright />
+      <AppFooter />
     </footer>
   </div>
 </template>
@@ -27,7 +28,7 @@ import MySkills from "./components/MySkills/MySkills.vue";
 import MyTimeline from "./components/Experience/MyTimeline";
 import MyProjects from "./components/Experience/MyProjects.vue";
 import ContactMe from "./components/Footer/ContactMe.vue";
-import FooterCopyright from "./components/Footer/FooterCopyright.vue";
+import AppFooter from "./components/Footer/AppFooter.vue";
 
 import { Vue3Lottie } from 'vue3-lottie'
 import animation from "./assets/Animation.json";
@@ -42,25 +43,26 @@ export default {
     MyTimeline,
     MyProjects,
     ContactMe,
-    FooterCopyright,
+    AppFooter,
     Vue3Lottie
   },
   created() {
+    // window.addEventListener('resize', this.toggleIsMobile);
     window.addEventListener('scroll', this.scrollHandler);
   },
   data() {
     return {
       isLoading: true,
+      isMobile: false,
       animation
     }
   },
   methods: {
     toggleIsLoading() {
       this.isLoading = !this.isLoading;
-      this.loadPage();
     },
-    loadPage() {
-
+    toggleIsMobile() {
+      return window.innerWidth < 1250 ? this.isMobile = true : this.isMobile = false;
     },
     scrollHandler() {
       window.onscroll = function () {
@@ -78,6 +80,7 @@ export default {
       }
     },
     unmounted() {
+      // window.removeEventListener('resize', this.toggleIsMobile);
       window.removeEventListener('scroll', this.scrollHandler);
     }
   }
@@ -156,6 +159,34 @@ h3 {
 
   &:hover {
     background-color: var(--white);
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  header {
+    height: unset;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 768px) {
+
+  main {
+    padding: 40px 100px 150px;
+  }
+
+  footer {
+    padding: 40px 100px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  main {
+    padding: 20px 50px 100px;
+  }
+
+  footer {
+    padding: 20px 50px;
   }
 }
 
