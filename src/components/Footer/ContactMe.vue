@@ -65,4 +65,21 @@ textarea {
   resize: vertical;
   height: 200px;
 }
+
+@media screen and (max-width: 768px) {
+  section {
+    form {
+      grid-template-columns: 1fr;
+
+      .form-section[form-question="subject"],
+      .form-section[form-question="message"] {
+        grid-column: unset;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
 </style>

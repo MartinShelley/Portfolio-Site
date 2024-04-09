@@ -32,11 +32,11 @@
       <div class="nav-wrapper">
         <nav class="main-navigation">
           <ul>
-            <li><a href="#about-me">About Me</a></li>
-            <li><a href="#my-skills">Skills</a></li>
-            <li><a href="#my-experience">Experience</a></li>
-            <li><a href="#my-projects">Projects</a></li>
-            <li><a href="#contact-me">Contact</a></li>
+            <li @click="toggleHamburgerMenu"><a href="#about-me">About Me</a></li>
+            <li @click="toggleHamburgerMenu"><a href="#my-skills">Skills</a></li>
+            <li @click="toggleHamburgerMenu"><a href="#my-experience">Experience</a></li>
+            <li @click="toggleHamburgerMenu"><a href="#my-projects">Projects</a></li>
+            <li @click="toggleHamburgerMenu"><a href="#contact-me">Contact</a></li>
           </ul>
         </nav>
         <div class="secondary-navigation">
@@ -145,13 +145,6 @@ export default {
 }
 
 #mobile-navigation {
-  // position: absolute;
-  // top: 0;
-  // bottom: 0;
-  // right: 0;
-  // left: 0;
-  // height: 100dvh;
-  // width: 100vw;
 
   #mobile-nav-background {
     background-color: rgba(0, 0, 0, 0.5);
@@ -167,10 +160,12 @@ export default {
 
     &.show {
       opacity: 1;
+      visibility: visible;
     }
 
     &.hide {
       opacity: 0;
+      visibility: hidden;
     }
   }
 
@@ -188,19 +183,6 @@ export default {
 
     &.opened {
       transform: translateX(0);
-
-      // &::before {
-      //   background-color: rgba(0, 0, 0, 0.5);
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   right: 0;
-      //   bottom: 0;
-      //   width: 100vw;
-      //   height: 100vh;
-      //   z-index: 1;
-      //   transition: all ease 1s;
-      // }
     }
 
     &.closed {
@@ -208,7 +190,6 @@ export default {
     }
 
     .nav-wrapper {
-      // padding: 100px 50px;
       display: flex;
       flex-direction: column;
       height: 100%;
@@ -224,8 +205,6 @@ export default {
       }
 
       .work-status {
-        .light {}
-
         p {
           font-size: 24px;
         }
@@ -235,9 +214,6 @@ export default {
 }
 
 @media screen and (min-width: 1250px) {
-  // #desktop-navigation {
-  //   display: flex;
-  // }
 
   #hamburger-icon,
   #mobile-navigation {
@@ -247,9 +223,6 @@ export default {
 
 
 @media screen and (max-width: 1250px) {
-  // #desktop-navigation {
-  //   display: none;
-  // }
 
   #desktop-nav,
   #desktop-secondary-nav {

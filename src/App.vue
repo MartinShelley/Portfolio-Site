@@ -2,8 +2,7 @@
   <Vue3Lottie :animationData="animation" :speed="0.75" :height="350" :width="350" :loop="false"
     @onComplete="toggleIsLoading" v-if="isLoading" />
   <div v-if="!isLoading" class="main-content">
-    <header>
-      <!-- <MainNavigation :isMobile="isMobile" /> -->
+    <header :class="[lastScrollPosition > 0 ? 'mid-page' : '', !showNavBar ? 'nav--hidden' : '']">
       <MainNavigation />
     </header>
     <main>
@@ -46,41 +45,40 @@ export default {
     AppFooter,
     Vue3Lottie
   },
-  created() {
-    // window.addEventListener('resize', this.toggleIsMobile);
-    window.addEventListener('scroll', this.scrollHandler);
-  },
   data() {
     return {
       isLoading: true,
-      isMobile: false,
+      showNavBar: true,
+      lastScrollPosition: 0,
       animation
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.scrollHandler);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.scrollHandler);
   },
   methods: {
     toggleIsLoading() {
       this.isLoading = !this.isLoading;
     },
-    toggleIsMobile() {
-      return window.innerWidth < 1250 ? this.isMobile = true : this.isMobile = false;
-    },
     scrollHandler() {
-      window.onscroll = function () {
-        if (this.scrollY === 0) {
-          document.querySelector('header').classList.remove('mid-page');
-        }
-        else if (this.oldScroll > this.scrollY) {
-          document.querySelector('header').classList.add('mid-page');
-          document.querySelector("header").style.transform = "translateY(0%)";
-        }
-        else {
-          document.querySelector("header").style.transform = "translateY(-100%)";
-        }
-        this.oldScroll = this.scrollY;
+      const currentScrolledPosition = window.scrollY || document.documentElement.scrollTop;
+
+      if (currentScrolledPosition <= 0) {
+        this.lastScrollPosition = 0;
+        return;
       }
+
+      if (Math.abs(currentScrolledPosition - this.lastScrollPosition) < 50) {
+        return
+      }
+
+      this.showNavBar = currentScrolledPosition < this.lastScrollPosition;
+      this.lastScrollPosition = currentScrolledPosition;
     },
     unmounted() {
-      // window.removeEventListener('resize', this.toggleIsMobile);
       window.removeEventListener('scroll', this.scrollHandler);
     }
   }
@@ -107,9 +105,15 @@ header {
   background-color: white;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: translateY(0%);
+  box-shadow: none;
 
   &.mid-page {
     box-shadow: 0px 0px 35px 1px rgb(0 0 0 / 10%);
+  }
+
+  &.nav--hidden {
+    transform: translateY(-100%);
+    box-shadow: none;
   }
 }
 
@@ -156,6 +160,7 @@ h3 {
   border-radius: 4px;
   border: 1px solid #000;
   cursor: pointer;
+  color: #000;
 
   &:hover {
     background-color: var(--white);
@@ -182,11 +187,23 @@ h3 {
 @media screen and (max-width: 767px) {
 
   main {
-    padding: 20px 50px 100px;
+    padding: 20px 35px 100px;
   }
 
   footer {
-    padding: 20px 50px;
+    padding: 20px 35px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
   }
 }
 
@@ -200,16 +217,4 @@ h3 {
   }
 
 }
-
-// .fade-enter-from {
-//   opacity: 0;
-// }
-
-// .fade-enter-active {
-//   transition: all 10s ease;
-//   transition-delay: 5s;
-// }
-
-// .fade-enter-to {
-//   opacity: 1;
-// }</style>
+</style>

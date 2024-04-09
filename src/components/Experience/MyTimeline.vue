@@ -154,4 +154,20 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  #my-career-timeline {
+    .jobs {
+      .job-card {
+        &:nth-child(odd) {
+          left: -15px
+        }
+
+        &:nth-child(even) {
+          right: -15px;
+        }
+      }
+    }
+  }
+}
 </style>

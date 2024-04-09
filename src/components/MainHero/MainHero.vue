@@ -23,7 +23,7 @@
 </template>
 
 <style lang="scss" scoped>
-section {
+#hero {
   display: flex;
   align-items: center;
   height: 100vh;
@@ -56,5 +56,15 @@ h2 {
 
 .custom-shape-divider-bottom-1710255202 .shape-fill {
   fill: #E77917;
+}
+
+@media screen and (max-width: 768px) {
+  #hero {
+    height: 75vh;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
 }
 </style>
