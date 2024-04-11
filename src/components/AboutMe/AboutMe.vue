@@ -65,14 +65,17 @@
 
     img {
       height: 100%;
+      border-radius: 25px;
     }
   }
 }
 
 @media screen and (max-width: 1000px) {
   #about-me {
+    margin: 25px 0;
+
     .about-me-body {
-      flex-direction: column;
+      flex-direction: column-reverse;
 
       .copy {
         display: flex;
@@ -82,9 +85,10 @@
       }
 
       img {
-        width: 300px;
+        width: 250px;
         height: auto;
         margin: 0 auto;
+        border-radius: 15px;
       }
     }
   }

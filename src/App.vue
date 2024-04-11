@@ -1,6 +1,6 @@
 <template>
   <Vue3Lottie :animationData="animation" :speed="0.75" :height="350" :width="350" :loop="false"
-    @onComplete="toggleIsLoading" v-if="isLoading" />
+    @onComplete="toggleIsLoading" v-if="isLoading" class="starting-animation" />
   <div v-if="!isLoading" class="main-content">
     <header :class="[lastScrollPosition > 0 ? 'mid-page' : '', !showNavBar ? 'nav--hidden' : '']">
       <MainNavigation />
@@ -92,8 +92,18 @@ export default {
   --orange: #e77917;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
 html {
+  box-sizing: border-box;
   font-family: "Nunito Sans", "Manrope", sans-serif;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -124,7 +134,11 @@ ul {
 }
 
 main {
-  padding: 40px 200px 200px;
+  padding: 0 200px 200px;
+}
+
+section {
+  scroll-margin-top: 100px;
 }
 
 .main-content {
@@ -204,6 +218,10 @@ h3 {
 
   h3 {
     font-size: 20px;
+  }
+
+  .starting-animation {
+    width: 300px;
   }
 }
 

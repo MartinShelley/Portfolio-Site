@@ -157,6 +157,8 @@ export default {
 
 @media screen and (max-width: 768px) {
   #my-career-timeline {
+    margin: 0 auto;
+
     .jobs {
       .job-card {
         &:nth-child(odd) {

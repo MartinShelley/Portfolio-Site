@@ -58,7 +58,7 @@ export default {
           liveEnvLink: 'https://invoice-app-3517e.web.app/'
         },
         comingSoon: {
-
+          name: 'Coming Soon'
         }
       }
     }
@@ -67,7 +67,7 @@ export default {
     getImgUrl(pic) {
       const picLabel = pic.replaceAll(' ', '-').toLowerCase();
       return require(`../../assets/project-screenshots/${picLabel}.png`);
-    }
+    },
   },
   components: {
     Carousel,
@@ -80,6 +80,11 @@ export default {
 <style lang="scss" scoped>
 h2 {
   text-align: center;
+}
+
+#my-projects {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .project {
@@ -153,9 +158,48 @@ h2 {
     }
   }
 
+  // &:active {
+  //   img {
+  //     opacity: 0.1;
+  //   }
+
+  //   .hover-card {
+  //     opacity: 1;
+  //   }
+  // }
+
 }
 
 ol.carousel__pagination {
   padding-left: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+  #my-projects {
+    margin-top: 50px;
+  }
+
+  .project {
+    .hover-card {
+      .card-content {
+        .project-title {
+          font-size: 16px;
+          margin: 0;
+        }
+
+        .tools {
+          padding: 8px;
+          font-size: 12px;
+          margin: 8px 0;
+        }
+      }
+    }
+  }
+}
+
+button {
+  padding: 8px;
+  width: 100px;
+  font-size: 12px;
 }
 </style>

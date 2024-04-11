@@ -111,6 +111,20 @@ export default {
   }
 }
 
+@media screen and (max-width: 768px) {
+  #my-skills {
+    margin-top: 50px;
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    .carousel {
+      max-height: 125px;
+    }
+  }
+}
+
 @keyframes skills-carousel {
   0% {
     transform: translateX(0);

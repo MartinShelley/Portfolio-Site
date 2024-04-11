@@ -8,7 +8,7 @@
       <ul>
         <li><a href="#about-me">About Me</a></li>
         <li><a href="#my-skills">Skills</a></li>
-        <li><a href="#my-experience">Experience</a></li>
+        <li><a href="#my-career-timeline">Experience</a></li>
         <li><a href="#my-projects">Projects</a></li>
         <li><a href="#contact-me">Contact</a></li>
       </ul>
@@ -20,11 +20,11 @@
         <p>Open to work</p>
       </div>
     </div>
-    <svg id="hamburger-icon" width="32px" height="32px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
-      fill="none" @click="toggleHamburgerMenu()">
-      <path fill="#000000" fill-rule="evenodd"
-        d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z" />
-    </svg>
+    <div id="hamburger-icon" @click="toggleHamburgerMenu" :class="showHamburgerMenu ? 'active' : ''">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
   <div id="mobile-navigation">
     <div id="mobile-nav-background" :class="showHamburgerMenu ? 'show' : 'hide'"></div>
@@ -34,7 +34,7 @@
           <ul>
             <li @click="toggleHamburgerMenu"><a href="#about-me">About Me</a></li>
             <li @click="toggleHamburgerMenu"><a href="#my-skills">Skills</a></li>
-            <li @click="toggleHamburgerMenu"><a href="#my-experience">Experience</a></li>
+            <li @click="toggleHamburgerMenu"><a href="#my-career-timeline">Experience</a></li>
             <li @click="toggleHamburgerMenu"><a href="#my-projects">Projects</a></li>
             <li @click="toggleHamburgerMenu"><a href="#contact-me">Contact</a></li>
           </ul>
@@ -57,9 +57,6 @@ export default {
   components: {
     UserProfiles,
   },
-  // props: {
-  //   isMobile: Boolean
-  // },
   data() {
     return {
       showHamburgerMenu: false
@@ -154,9 +151,9 @@ export default {
     right: 0;
     bottom: 0;
     width: 100vw;
-    height: 100dvh;
+    height: 100vh;
     z-index: 1;
-    transition: all ease 1s;
+    transition: all ease 0.1s;
 
     &.show {
       opacity: 1;
@@ -230,9 +227,36 @@ export default {
   }
 
   #hamburger-icon {
-    display: block;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     z-index: 1000;
+    width: 24px;
+    height: 24px;
+
+    span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: #000;
+      transition: all 0.5s cubic-bezier(.215, .61, .355, 1);
+      transform-origin: left;
+    }
+
+    &.active {
+      span:first-child {
+        transform: rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
   }
 
   #mobile-navigation {
@@ -240,7 +264,11 @@ export default {
   }
 
   .header-wrapper {
-    padding: 20px 50px;
+    padding: 20px 35px;
+
+    .logo {
+      height: 30px;
+    }
   }
 }
 
