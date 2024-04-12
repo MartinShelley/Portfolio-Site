@@ -1,7 +1,7 @@
 <template>
-  <div class="footer-copyright">
+  <div>
     <UserProfiles />
-    <p>&copy;2023 Martin Shelley.</p>
+    <p>&copy;2024 Martin Shelley.</p>
   </div>
 </template>
 
@@ -15,10 +15,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footer-copyright {
+div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0 0;
+  padding: 25px 0 0;
 }
 </style>

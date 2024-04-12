@@ -33,7 +33,7 @@
         </g>
       </svg>
     </a>
-    <a href="mailto:hello@martinshelley.com" class="icon">
+    <!-- <a href="mailto:hello@martinshelley.com" class="icon">
       <svg height="32px" width="32px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 512 512" fill="#000000">
         <g>
@@ -52,13 +52,14 @@
             c0,0.803-0.015,1.597-0.116,2.304l-1.386,9.472L329.012,265.409l156.36-136.418V388.572z" />
         </g>
       </svg>
-    </a>
+    </a> -->
   </div>
 </template>
 
 <style lang="scss" scoped>
 .user-profiles {
   display: flex;
+  flex-direction: row;
   gap: 25px;
 
   .icon:hover {

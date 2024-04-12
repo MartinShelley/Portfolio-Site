@@ -1,11 +1,15 @@
 <template>
   <section id="contact-me">
     <h2>Get in touch!</h2>
-    <p>
+    <p>Thank you so much for visiting my website. If you have a question or just want to say hi, feel free to email me
+      and I'll get back to you
+      when I can.</p>
+    <a href="mailto:hello@martinshelley.com" class="button">Message me!</a>
+    <!-- <p>
       Feel free to send over any questions you may have. I look forward to
       hearing from you!
-    </p>
-    <form>
+    </p> -->
+    <!-- <form>
       <div class="form-section" form-question="name">
         <label for="name">Full Name</label>
         <input type="text" name="name" id="name" required />
@@ -23,17 +27,44 @@
         <textarea name="message" rows="5" id="message"></textarea>
       </div>
       <button type="submit" class="button">Submit</button>
-    </form>
+    </form> -->
   </section>
 </template>
 
 
 <style lang="scss" scoped>
 section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
 
   h2,
   p {
     text-align: center;
+  }
+
+  .button {
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .email {
+    color: grey;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: #000;
+    }
   }
 
   form {
@@ -80,6 +111,10 @@ textarea {
         width: 100%;
       }
     }
+  }
+
+  p {
+    max-width: 300px;
   }
 }
 </style>

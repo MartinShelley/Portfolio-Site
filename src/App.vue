@@ -148,6 +148,9 @@ section {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--white);
   color: #1a1b1f;
   padding: 40px 200px 20px;
