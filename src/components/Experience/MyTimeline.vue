@@ -39,7 +39,6 @@ export default {
           jobTitle: 'Implementation Specialist',
           duration: 'Dec 2018 - Oct 2021',
           skills: ['HTML', 'CSS', 'Javascript', 'jQuery', 'Segment'],
-          // skills: ['HTML', 'CSS', 'Javascript', 'jQuery', 'Google Analytics', 'Google Tag Manager', 'Segment'],
           description: 'Using Vanilla Javascript to add analytics tracking and embed 3rd party applications to Racing Post site. Spearheaded the integration of various third-party tools through Racing Posts Customer Data Platform. Diagnosed issues and developed technical solutions (using Vanilla Javascript) for third-party tool integrations.'
         },
         {

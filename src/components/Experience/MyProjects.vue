@@ -157,17 +157,6 @@ h2 {
       opacity: 1;
     }
   }
-
-  // &:active {
-  //   img {
-  //     opacity: 0.1;
-  //   }
-
-  //   .hover-card {
-  //     opacity: 1;
-  //   }
-  // }
-
 }
 
 ol.carousel__pagination {

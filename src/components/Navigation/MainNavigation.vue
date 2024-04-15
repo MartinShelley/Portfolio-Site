@@ -1,5 +1,4 @@
 <template>
-  <!-- <div id="desktop-navigation" class="header-wrapper"> -->
   <div class="header-wrapper">
     <div class="logo">
       <img src="../../assets/portfolio-logos/logo-no-background.svg" />

@@ -26,13 +26,9 @@
 
 <style lang="scss" scoped>
 #hero {
-  // display: flex;
-  // align-items: center;
   height: 100vh;
   position: relative;
   top: -30px;
-  // background-image: url(../../assets/hero-img.svg);
-  // overflow: hidden;
 
   .hero-content {
     position: relative;

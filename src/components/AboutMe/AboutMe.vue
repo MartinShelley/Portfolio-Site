@@ -36,7 +36,6 @@
 <style lang="scss" scoped>
 #about-me {
   margin: 150px 0;
-  // padding: 75px 0;
 
   h2 {
     text-align: center;

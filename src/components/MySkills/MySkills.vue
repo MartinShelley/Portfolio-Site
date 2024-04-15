@@ -34,7 +34,6 @@ export default {
         "firebase",
         "google-tag-manager",
         "jira",
-        "node-js",
         "html",
         "css",
         "scss",
@@ -49,8 +48,7 @@ export default {
         "google-analytics",
         "firebase",
         "google-tag-manager",
-        "jira",
-        "node-js"
+        "jira"
       ],
       carouselState: 'running'
     };
