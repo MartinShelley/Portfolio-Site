@@ -1,6 +1,7 @@
 <div align="center">
-<img src="./src/assets//portfolio-logos/portfolio-logo-low-res.png" width="300" height="100"><h1>Martin Shelley Portfolio site</h1>
+<img src="./src/assets//portfolio-logos/portfolio-logo-low-res.png" width="300" height="100"><h1>Martin Shelley Portfolio site - <a href="https://martinshelley.com">https://martinshelley.com</h1>
 </div>
+
 ![](./screenshot.png)
 
 ## Project setup
