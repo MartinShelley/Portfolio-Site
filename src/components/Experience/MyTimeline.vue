@@ -3,7 +3,7 @@
     <h2>My Timeline</h2>
     <div class="jobs">
       <div class="job-card" v-for="(value, key) in roles.slice().reverse()" :key="key"
-        :style="{ 'top': `calc(${key * -5}px)` }">
+        :style="{ 'transform': `translateY(calc(${key * -8}px))` }">
         <h4 class="job-title">{{ value.jobTitle }} @ {{ value.company }}</h4>
         <p class="job-duration">{{ value.duration }}</p>
         <p class="job-description" v-if="value.description">{{ value.description }}</p>
@@ -53,7 +53,7 @@ export default {
           jobTitle: 'Front End Developer',
           duration: 'Sep 2023 - Present',
           skills: ['HTML', 'CSS', 'SASS', 'Javascript', 'Angular', 'Typescript', 'Nativescript'],
-          description: 'Build and maintain Angular components across different client frontends. Led on a client project which introduced QR code scanning for a clients customers to enable them to scan their race tickets. Proactively addressed and resolved bugs, contributing to the overall stability and functionality of multiple client applications.'
+          description: 'Build and maintain Angular components & applications across different client frontends. Led on a client project which introduced QR code scanning for a clients customers to enable them to scan their race tickets. Proactively addressed and resolved bugs, contributing to the overall stability and functionality of multiple client applications.'
         }
       ],
     }
@@ -79,8 +79,8 @@ export default {
   .jobs {
     .job-card {
       position: relative;
-      border-top: 5px solid var(--orange);
-      border-bottom: 5px solid var(--orange);
+      border-top: 8px solid var(--orange);
+      border-bottom: 8px solid var(--orange);
       padding: 20px;
       border-color: var(--orange);
 
@@ -103,16 +103,16 @@ export default {
       &:nth-child(odd) {
         text-align: left;
         left: -30px;
-        border-left: 5px solid var(--orange);
+        border-left: 8px solid var(--orange);
         border-radius: 30px 0 0 30px;
 
         .job-title::before {
-          left: -15px;
+          left: -17px;
           content: "";
           border-radius: 100%;
-          border: 5px solid var(--orange);
-          height: 15px;
-          width: 15px;
+          border: 8px solid var(--orange);
+          height: 10px;
+          width: 10px;
           position: absolute;
           background-color: #fff;
         }
@@ -121,16 +121,16 @@ export default {
       &:nth-child(even) {
         right: -30px;
         text-align: right;
-        border-right: 5px solid var(--orange);
+        border-right: 8px solid var(--orange);
         border-radius: 0 30px 30px 0;
 
         .job-title::after {
-          right: -15px;
+          right: -17px;
           content: "";
           border-radius: 100%;
-          border: 5px solid var(--orange);
-          height: 15px;
-          width: 15px;
+          border: 8px solid var(--orange);
+          height: 10px;
+          width: 10px;
           position: absolute;
           background-color: #fff;
         }
@@ -141,7 +141,6 @@ export default {
       }
 
       &:first-child {
-        top: 0;
         border-top: 0;
         border-top-left-radius: 0;
       }

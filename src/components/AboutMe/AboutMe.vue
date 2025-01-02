@@ -10,21 +10,19 @@
           school (if any of my old school teachers read this.. I'm sorry!).
         </p>
         <p>
-          Following University, I ventured into IT Support then moved onto different roles within the Analytics
-          industry, including a role where I led on projects (including developing A/B tests) for big clients such as
-          Ticketmaster & Carphone Warehouse. When the pandemic struck, I rediscovered my passion for web development and
-          embarked on a career transition.
+          Following University, I began my career in IT Support before transitioning into different roles within the Analytics
+          industry, where I gained valuable experience leading projects and developing A/B tests for high-profile clients such as
+          Ticketmaster & Carphone Warehouse. When the pandemic hit, I rediscovered my passion for web development and committed to a career transition.
         </p>
         <p>
-          Leveraging my background in CRO and A/B testing, I secured a role as a Front End Developer at The White
-          Company. Here, I delved into many projects, but wanted to continue to grow further as a developer and work
-          with different technologies, mainly front end frameworks.
+          Leveraging my experience in A/B testing & my growing technical skillset, I secured a role as a Front End Developer at The White
+          Company. There, I delved into many high impacting projects including the implementation of a 'sticky' add to bag button which resulted in a £1.8M annual incremental revenue benefit. However, driven by my eagerness to learn and grow, I sought opportunities to deepen my technical expertise and expand my toolkit.
         </p>
         <p>
-          Now, at I-Neda, I'm continuing my learning journey as a developer using Angular & Typescript while learning
-          Node.js in my spare time. I'm eager to further my skills and tackle exciting new projects on the horizon.
+          Now, as a Front End Developer at I-Neda, I'm continuing my journey as a developer specialising in Angular & Typescript while actively learning
+          Node.js & React in my spare time. I'm eager to further my skills even more, embrace new challenges and tackle exciting new innovative projects on the horizon.
         </p>
-        <a href="./cv.pdf" target="_blank">
+        <a href="./CV.pdf" target="_blank">
           <button class="button">Download my public CV</button>
         </a>
       </div>
