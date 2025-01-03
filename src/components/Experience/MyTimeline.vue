@@ -32,28 +32,28 @@ export default {
           jobTitle: 'Data Engineer',
           duration: 'May 2016 - Oct 2018',
           skills: ['HTML', 'CSS', 'Javascript', 'jQuery'],
-          description: 'Leading on the implementation of A/B tests for international clients. Led on other Analytics projects for big clients such as Ticketmaster & Hearst Magazines. Using Javascript to help implement and fix Analytics features on clients websites.'
+          description: 'Leading on the implementation of A/B tests for international clients. Led on other Analytics projects for big clients such as Ticketmaster & Hearst Magazines. Diagnose issues & developed solutions for 3rd party tool integrations (e.g. Google Analytics fix in response to Safari’s ITP deployment, ensuring the ability to target users on apps by using Braze).'
         },
         {
           company: 'Racing Post',
           jobTitle: 'Implementation Specialist',
           duration: 'Dec 2018 - Oct 2021',
           skills: ['HTML', 'CSS', 'Javascript', 'jQuery', 'Segment'],
-          description: 'Using Vanilla Javascript to add analytics tracking and embed 3rd party applications to Racing Post site. Spearheaded the integration of various third-party tools through Racing Posts Customer Data Platform. Diagnosed issues and developed technical solutions (using Vanilla Javascript) for third-party tool integrations.'
+          description: 'Responsible for the Google Tag Manager container for the Racing Post website, using JavaScript to add tracking and embed third party scripts. Spearheaded the integration of various third-party tools through Racing Posts Customer Data Platform. Diagnosed issues and developed technical solutions (using Javascript) for third-party tool integrations.'
         },
         {
           company: 'The White Company',
           jobTitle: 'Front End Developer',
           duration: 'Nov 2021 - Aug 2023',
           skills: ['HTML', 'CSS', 'SASS', 'Javascript', 'jQuery', 'Adobe Target', 'Adobe Launch'],
-          description: 'Lead CRO developer at The White Company. Led on a comprehensive testing & personalisation roadmap where one test equated to an £1.8m annual incremental revenue benefit. Acted as main point of contact for technical & non-technical senior stakeholders. Worked closely with Product & Designers to implement their ideas onto the site & also ensured that crucial web features were rolled out onto the site gradually to allow for testing.'
+          description: 'Lead CRO developer at The White Company, responsible for delivering testing and personalisation initiatives from all areas of the company to optimise user experience & maximise revenue. Spearheaded a testing and personalization roadmap, delivering a standout test that resulted in a £1.8M annual incremental revenue benefit. Translated Figma and Sketch designs into pixel perfect responsive components for the UK, US & rest of world websites, ensuring consistency and high-quality delivery. Main point of contact for the team for both technical & non-technical senior stakeholders, including back-end developers, designers, product owners, product managers & directors.'
         },
         {
           company: 'I-Neda',
           jobTitle: 'Front End Developer',
           duration: 'Sep 2023 - Present',
           skills: ['HTML', 'CSS', 'SASS', 'Javascript', 'Angular', 'Typescript', 'Nativescript'],
-          description: 'Build and maintain Angular components & applications across different client frontends. Led on a client project which introduced QR code scanning for a clients customers to enable them to scan their race tickets. Proactively addressed and resolved bugs, contributing to the overall stability and functionality of multiple client applications.'
+          description: 'Involved in the implementation of a self-service betting terminal application for one of the largest racecourses in the country. Led a high-impact project for our largest client, successfully integrating QR code scanning functionality into their application, significantly enhancing usability and user experience. Oversaw the development of the account and registration journeys for a new Advance Deposit Wagering (ADW) platform, positioning the application to be pitched to new clients.'
         }
       ],
     }
