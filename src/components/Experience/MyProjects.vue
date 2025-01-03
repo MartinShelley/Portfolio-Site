@@ -3,7 +3,7 @@
     <h2>My Projects</h2>
     <Carousel :items-to-show="1" :autoplay=3000 :wrap-around=true :transition=1000 :pause-autoplay-on-hover=true>
       <Slide v-for="(project, index) in projects" :key="index" class="project">
-        <img :src="getImgUrl(project.name)" v-if="project.gitHubLink" />
+        <img :src="getImgUrl(project.name)" v-if="project.gitHubLink" :alt="project.name"/>
         <div class="hover-card" v-if="project.gitHubLink">
           <div class="card-content">
             <h4 class="project-title">{{ project.name }}</h4>

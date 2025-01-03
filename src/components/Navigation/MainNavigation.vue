@@ -1,7 +1,7 @@
 <template>
   <div class="header-wrapper">
     <div class="logo">
-      <img src="../../assets/portfolio-logos/logo-no-background.svg" />
+      <img src="../../assets/portfolio-logos/logo-no-background.svg" alt="Logo"/>
     </div>
     <nav id="desktop-nav" class="main-navigation">
       <ul>

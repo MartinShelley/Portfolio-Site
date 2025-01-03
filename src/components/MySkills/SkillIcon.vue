@@ -1,6 +1,6 @@
 <template>
   <figure class="slide">
-    <img class="skill-icon" :src="require(`../../assets/skill-icons/${skill}-icon.svg`)" @mouseenter="toggleCaption"
+    <img class="skill-icon" :src="require(`../../assets/skill-icons/${skill}-icon.svg`)" :alt="skill" @mouseenter="toggleCaption"
       @mouseleave="toggleCaption" />
     <figcaption :skill="skill" :style="{ visibility: captionVisibility }">{{ formatCaption }}</figcaption>
   </figure>

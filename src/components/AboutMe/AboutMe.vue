@@ -26,7 +26,7 @@
           <button class="button">Download my public CV</button>
         </a>
       </div>
-      <img src="../../assets/me-300.jpg" />
+      <img src="../../assets/me-300.jpg" alt="Image of me"/>
     </div>
   </section>
 </template>
