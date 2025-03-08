@@ -51,9 +51,16 @@ export default {
         {
           company: 'I-Neda',
           jobTitle: 'Front End Developer',
-          duration: 'Sep 2023 - Present',
+          duration: 'Sep 2023 - Feb 2025',
           skills: ['HTML', 'CSS', 'SASS', 'Javascript', 'Angular', 'Typescript', 'Nativescript'],
           description: 'Involved in the implementation of a self-service betting terminal application for one of the largest racecourses in the country. Led a high-impact project for our largest client, successfully integrating QR code scanning functionality into their application, significantly enhancing usability and user experience. Oversaw the development of the account and registration journeys for a new Advance Deposit Wagering (ADW) platform, positioning the application to be pitched to new clients.'
+        },
+        {
+          company: 'Bluebee',
+          jobTitle: 'Senior Developer',
+          duration: 'Feb 2025 - Present',
+          skills: ['HTML', 'CSS', 'SASS', 'Javascript', 'Wordpress'],
+          description: "Develop and maintain pixel-perfect websites and implement new features using WordPress' Gutenberg editor, HTML, CSS, and JavaScript. Assist clients in migrating DNS and mail servers to our hosting platform, ensuring a smooth transition. Deploy client websites to our hosting servers, following rigorous testing and pre-launch quality assurance checks. Collaborate with the marketing team to enhance client website SEO using Semrush, improving search engine visibility."
         }
       ],
     }
@@ -148,6 +155,7 @@ export default {
       &:last-child {
         border-bottom: 0;
         border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
       }
     }
   }
