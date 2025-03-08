@@ -14,9 +14,9 @@
     </nav>
     <div id="desktop-secondary-nav" class="secondary-navigation">
       <UserProfiles />
-      <div class="unavailable-for-work work-status">
+      <div class="open-to-work work-status">
         <div class="light"></div>
-        <p>Unavailable for work</p>
+        <p>Open to work</p>
       </div>
     </div>
     <div id="hamburger-icon" @click="toggleHamburgerMenu" :class="showHamburgerMenu ? 'active' : ''">
