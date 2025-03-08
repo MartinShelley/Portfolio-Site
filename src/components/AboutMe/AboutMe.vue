@@ -19,7 +19,7 @@
           Company. There, I delved into many high impacting projects including the implementation of a 'sticky' add to bag button which resulted in a £1.8M annual incremental revenue benefit. However, driven by my eagerness to learn and grow, I sought opportunities to deepen my technical expertise and expand my toolkit.
         </p>
         <p>
-          Now, as a Front End Developer at I-Neda, I'm continuing my journey as a developer specialising in Angular & Typescript while actively learning
+          Now, as a Senior Developer at Bluebee, I'm continuing my journey as a developer while actively learning
           Node.js & React in my spare time. I'm eager to further my skills even more, embrace new challenges and tackle exciting new innovative projects on the horizon.
         </p>
         <a href="./CV.pdf" target="_blank">
